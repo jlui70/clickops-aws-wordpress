@@ -1,0 +1,36 @@
+- name: Refork GitHub repositories (clone, detach fork, and push)
+  hosts: localhost
+  vars_files:
+    - vars/repos.yml
+  tasks:
+
+    - name: Criar diretório temporário para clonar os repositórios
+      tempfile:
+        state: directory
+        suffix: _repos
+      register: temp_dir
+
+    - name: Clonar o repositório base (fork ou original)
+      git:
+        repo: "{{ item.base_repo }}"
+        dest: "{{ temp_dir.path }}/{{ item.name }}"
+        clone: yes
+      loop: "{{ repos }}"
+
+    - name: Remover o remoto original do Git
+      command: git remote remove origin
+      args:
+        chdir: "{{ temp_dir.path }}/{{ item.name }}"
+      loop: "{{ repos }}"
+
+    - name: Adicionar o novo repositório como origem
+      command: git remote add origin "{{ item.new_repo }}"
+      args:
+        chdir: "{{ temp_dir.path }}/{{ item.name }}"
+      loop: "{{ repos }}"
+
+    - name: Realizar o push para o novo repositório
+      command: git push -u origin main --force
+      args:
+        chdir: "{{ temp_dir.path }}/{{ item.name }}"
+      loop: "{{ repos }}"

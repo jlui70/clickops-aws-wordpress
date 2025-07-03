@@ -1,0 +1,8 @@
+repos:
+  - name: wordpress-docker
+    base_repo: "https://github.com/docker-library/wordpress.git"
+    new_repo: "git@github.com:jlui70/wordpress-docker.git"
+
+  - name: infra-ansible-aws
+    base_repo: "https://github.com/ansible/ansible-examples.git"
+    new_repo: "git@github.com:jlui70/infra-ansible-aws.git"
