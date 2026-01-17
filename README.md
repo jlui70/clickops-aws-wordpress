@@ -1,4 +1,26 @@
-# Índice
+# WordPress na AWS: Implementação Manual (ClickOps)
+
+> **Guia passo a passo para implementação manual** de arquitetura WordPress escalável e altamente disponível na AWS usando Console (ClickOps).
+
+[![AWS](https://img.shields.io/badge/Cloud-AWS-FF9900?style=flat-square&logo=amazon-aws)](https://aws.amazon.com/)
+[![WordPress](https://img.shields.io/badge/CMS-WordPress-21759B?style=flat-square&logo=wordpress)](https://wordpress.org/)
+[![Docker](https://img.shields.io/badge/Container-Docker-2496ED?style=flat-square&logo=docker)](https://www.docker.com/)
+[![MySQL](https://img.shields.io/badge/Database-MySQL_8.0-4479A1?style=flat-square&logo=mysql)](https://www.mysql.com/)
+
+---
+
+## 🎯 Sobre Este Projeto
+
+Este projeto demonstra a **implementação manual via AWS Console (ClickOps)** de uma infraestrutura escalável e altamente disponível para WordPress na AWS. A arquitetura inclui instâncias EC2 configuradas com Docker, banco de dados MySQL no RDS, EFS para armazenamento compartilhado, Load Balancer e Auto Scaling Group.
+
+### 📌 Comparação com IaC
+
+Este é o projeto de referência para comparação com a versão automatizada em Terraform:
+- 🔧 **Projeto Terraform (IaC):** https://github.com/jlui70/clickops-to-iac-wordpress
+
+---
+
+## 📚 Índice
 
 - [Descrição](#descrição)
 - [Arquitetura](#arquitetura)
@@ -11,7 +33,9 @@
 - [Parte 7: Configuração do Elastic Load Balancer](#parte-7-configuração-do-elastic-load-balancer)
 - [Parte 8: Configuração do Auto Scaling Group](#parte-8-configuração-do-auto-scaling-group)
 - [Parte 9: Testes](#parte-9-testes)
-- [Referências](#referências)
+
+---
+
 
 ## **Descrição**
 
@@ -414,3 +438,42 @@ Agora temos o template de lançamento EC2 configurado com o Amazon Linux 2, as c
 3. Após a configuração, você poderá acessar o painel administrativo do WordPress para gerenciar sua aplicação.
 
 ![](Img/dashboard-wp.png)
+
+---
+
+## 💰 Custos Estimados
+
+| Recurso | Custo Estimado | Observações |
+|---------|----------------|-------------|
+| NAT Gateway | ~$1.00/dia | Componente mais caro |
+| ALB | ~$0.50/dia | Load balancer |
+| EC2 t2.micro (2x) | Free tier ou ~$0.25/dia | Elegível para free tier |
+| RDS t3.micro | Free tier ou ~$0.50/dia | Elegível para free tier |
+| EFS | ~$0.10-0.20/dia | Baseado em uso |
+
+**Total estimado**: $2-3/dia durante testes
+
+⚠️ **IMPORTANTE**: Configure billing alerts e destrua os recursos quando não estiver usando!
+
+---
+
+## 📞 Links Úteis
+
+- **Repositório:** https://github.com/jlui70/clickops-aws-wordpress
+- **Projeto com Terraform (IaC):** https://github.com/jlui70/clickops-to-iac-wordpress
+- **AWS Console:** https://console.aws.amazon.com/
+- **AWS Well-Architected:** https://aws.amazon.com/architecture/well-architected/
+- **WordPress on AWS:** https://aws.amazon.com/getting-started/hands-on/launch-a-wordpress-website/
+- **Docker Hub - WordPress:** https://hub.docker.com/_/wordpress
+
+---
+
+## 📄 Licença
+
+Este projeto é open source e está disponível sob a [MIT License](LICENSE).
+
+---
+
+<p align="center">
+  <sub>Construído com ❤️ para demonstração de implementação manual na AWS</sub>
+</p>
