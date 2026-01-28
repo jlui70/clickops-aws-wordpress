@@ -9,14 +9,22 @@
 
 ---
 
-## 🎯 Sobre Este Projeto
+## 📋 Sobre o Projeto
 
-Este projeto demonstra a **implementação manual via AWS Console (ClickOps)** de uma infraestrutura escalável e altamente disponível para WordPress na AWS. A arquitetura inclui instâncias EC2 configuradas com Docker, banco de dados MySQL no RDS, EFS para armazenamento compartilhado, Load Balancer e Auto Scaling Group.
+Este projeto apresenta uma implementação **100% manual via AWS Console (ClickOps)** de uma arquitetura WordPress escalável e altamente disponível na AWS, servindo como **baseline de referência** para demonstrar a evolução para Infrastructure as Code (IaC).
 
-### 📌 Comparação com IaC
+Para validar a infraestrutura, construí manualmente todos os componentes:
 
-Este é o projeto de referência para comparação com a versão automatizada em Terraform:
-- 🔧 **Projeto Terraform (IaC):** https://github.com/jlui70/clickops-to-iac-wordpress
+🖱️ **Configuração ClickOps** incluindo VPC, Sub-redes, NAT Gateway, Security Groups  
+🐳 **Docker + WordPress** executando em instâncias EC2 com Amazon Linux 2  
+🗄️ **RDS MySQL 8.4** para banco de dados gerenciado  
+📁 **EFS** para armazenamento compartilhado entre instâncias  
+⚖️ **Application Load Balancer** distribuindo tráfego HTTP/HTTPS  
+📈 **Auto Scaling Group** garantindo alta disponibilidade e elasticidade  
+
+🎯 **Objetivo**: Documentar o processo manual completo para servir como **referência comparativa** com a versão totalmente automatizada via Terraform disponível em [clickops-to-iac-wordpress](https://github.com/jlui70/clickops-to-iac-wordpress).
+
+✅ **Resultado**: A documentação passo a passo comprova a complexidade e tempo necessário para ClickOps, evidenciando os benefícios de adotar IaC para reprodutibilidade, versionamento e automação de infraestrutura.
 
 ---
 
