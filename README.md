@@ -463,6 +463,8 @@ Agora temos o template de lançamento EC2 configurado com o Amazon Linux 2, as c
 
 ⚠️ **IMPORTANTE**: Configure billing alerts e destrua os recursos quando não estiver usando!
 
+---
+
 ## 📄 Licença
 
 Este projeto é open source e está disponível sob a [MIT License](LICENSE).
