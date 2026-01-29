@@ -2,6 +2,8 @@
 
 > **Guia passo a passo para implementação manual** de arquitetura WordPress escalável e altamente disponível na AWS usando Console (ClickOps).
 
+![Diagrama Arquitetura](Img/Clickops-AWS-Wordpress.png)
+
 [![AWS](https://img.shields.io/badge/Cloud-AWS-FF9900?style=flat-square&logo=amazon-aws)](https://aws.amazon.com/)
 [![WordPress](https://img.shields.io/badge/CMS-WordPress-21759B?style=flat-square&logo=wordpress)](https://wordpress.org/)
 [![Docker](https://img.shields.io/badge/Container-Docker-2496ED?style=flat-square&logo=docker)](https://www.docker.com/)
